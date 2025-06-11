@@ -21,6 +21,10 @@ export default function NavBar() {
                         <li className="nav-item">
                             <NavLink className="nav-link" aria-current="page" to={"/details"}>Details</NavLink>
                         </li>
+
+                        <li className="nav-item">
+                            <NavLink className="nav-link" aria-current="page" to={"/comparator"}>Comparator</NavLink>
+                        </li>
                     </ul>
                 </div>
             </div>
