@@ -7,6 +7,7 @@ import DefaultLayout from "./layouts/DefaultLayout"
 import HomePage from "./pages/HomePage"
 import VinylDetails from "./pages/VinylDetails"
 import ComparatorPage from "./pages/ComparatorPage"
+import WishListPage from "./pages/WishListPage"
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
             <Route path="/" Component={HomePage} />
             <Route path="/details" Component={VinylDetails} />
             <Route path="/comparator" Component={ComparatorPage} />
+            <Route path="/wishlist" Component={WishListPage} />
           </Route>
         </Routes>
       </BrowserRouter>

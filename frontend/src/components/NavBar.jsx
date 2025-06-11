@@ -13,7 +13,7 @@ export default function NavBar() {
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-3 text-center">
                         <li className="nav-item">
                             <NavLink className="nav-link" aria-current="page" to={"/"}>Home</NavLink>
                         </li>
@@ -24,6 +24,10 @@ export default function NavBar() {
 
                         <li className="nav-item">
                             <NavLink className="nav-link" aria-current="page" to={"/comparator"}>Comparator</NavLink>
+                        </li>
+
+                        <li className="nav-item">
+                            <NavLink className="nav-link" aria-current="page" to={"/wishlist"}>Wish List</NavLink>
                         </li>
                     </ul>
                 </div>
