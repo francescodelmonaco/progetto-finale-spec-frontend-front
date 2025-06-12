@@ -10,6 +10,10 @@
     --yellow: #faf2a0
 }
 
+a {
+    text-decoration: none !important;
+}
+
 /* navbar */
 nav {
     background-color: var(--yellow) !important;

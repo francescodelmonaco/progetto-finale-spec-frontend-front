@@ -16,7 +16,7 @@ export default function App() {
         <Routes>
           <Route Component={DefaultLayout}>
             <Route path="/" Component={HomePage} />
-            <Route path="/details" Component={VinylDetails} />
+            <Route path="/vinyls/:id" Component={VinylDetails} />
             <Route path="/comparator" Component={ComparatorPage} />
             <Route path="/wishlist" Component={WishListPage} />
           </Route>

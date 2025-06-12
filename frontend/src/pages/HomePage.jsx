@@ -1,4 +1,5 @@
-import { useState, useEffect, Link } from "react"
+import { useState, useEffect } from "react"
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
     // richiesta index vinili
@@ -31,14 +32,17 @@ export default function HomePage() {
 
             <div className="row row-cols-1 row-cols-md-3 g-4 my-3">
                 {
-                    vinyls.map((v, id) => (
-                        <div key={id} className="col">
+                    vinyls.map((v, index) => (
+                        <div key={index} className="col">
                             <div className="card">
-                                <div className="card-body">
+                                <Link to={`/vinyls/${v.id}`} className="card-body">
                                     <h5 className="card-title">{v.title}</h5>
-                                    <span>{v.artist}</span>
-                                    <span>{v.category}</span>
-                                </div>
+
+                                    <div className="d-flex flex-column">
+                                        <span>{v.artist}</span>
+                                        <span>{v.category}</span>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                     ))
