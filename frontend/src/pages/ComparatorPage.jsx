@@ -1,7 +1,7 @@
 export default function ComparatorPage() {
     return (
         <>
-            <h1 className="text-center">Comparator</h1>
+            <h1 className="text-center p-3">Comparatore</h1>
         </>
     )
 }
