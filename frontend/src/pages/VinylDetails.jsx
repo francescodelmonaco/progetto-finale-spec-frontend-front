@@ -22,7 +22,24 @@ export default function VinylDetails() {
 
     return (
         <>
-            <h1 className="text-center p-3">{vinyl.title}</h1>
+            <h1 className="text-center pt-3">{vinyl.title}</h1>
+            <h3 className="text-center pb-3">{vinyl.artist}</h3>
+
+            <div className="d-flex justify-content-between gap-3">
+                <figure className="w-50">
+                    <img className="w-100" src={vinyl.cover} alt={vinyl.title} />
+                </figure>
+
+                <div className="d-flex flex-column w-50">
+                    <span><strong>Genere: </strong>{vinyl.category}</span>
+                    <span><strong>Anno di pubblicazione: </strong>{vinyl.releaseYear}</span>
+                    <span><strong>Formato: </strong>{vinyl.format}</span>
+                    <span><strong>RPM: </strong>{vinyl.rpm}</span>
+                    <span><strong>Colore vinile: </strong>{vinyl.vinylColor}</span>
+                    <span><strong>Lingua: </strong>{vinyl.language}</span>
+                    <span><strong>Numero tracce: </strong>{vinyl.tracksNumber}</span>
+                </div>
+            </div>
         </>
     )
 }

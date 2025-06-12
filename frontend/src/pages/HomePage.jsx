@@ -34,9 +34,11 @@ export default function HomePage() {
                 {
                     vinyls.map((v, index) => (
                         <div key={index} className="col">
-                            <div className="card">
+                            <div className="card h-100">
                                 <Link to={`/vinyls/${v.id}`} className="card-body">
-                                    <h5 className="card-title">{v.title}</h5>
+                                    <img src={v.cover} className="card-img h-75" alt={v.title}></img>
+
+                                    <h5 className="card-title mt-3">{v.title}</h5>
 
                                     <div className="d-flex flex-column">
                                         <span>{v.artist}</span>
