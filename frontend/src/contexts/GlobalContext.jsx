@@ -19,9 +19,16 @@ const GlobalProvider = ({ children }) => {
             .catch(err => console.error(err))
     }, []);
 
+    // search bar
+    const [query, setQuery] = useState("");
+    const filteredVinyls = vinyls.filter(v => v.title.toLowerCase().includes(query.trim().toLowerCase()));
+
     // destructuring
     const value = {
-        vinyls
+        vinyls,
+        filteredVinyls,
+        query,
+        setQuery
     };
 
     return (

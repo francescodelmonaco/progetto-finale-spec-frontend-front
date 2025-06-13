@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { useGlobalContext } from "../contexts/GlobalContext"
 
 export default function HomePage() {
-    const { vinyls } = useGlobalContext();
+    const { filteredVinyls, query, setQuery } = useGlobalContext();
 
     return (
         <>
@@ -12,8 +12,13 @@ export default function HomePage() {
                 <button type="button" className="btn btn-outline-secondary">Filtri</button>
 
                 <form className="d-flex w-50" role="search">
-                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button className="btn btn-outline-secondary" type="submit">Search</button>
+                    <input
+                        className="form-control me-2"
+                        type="search"
+                        placeholder="Cerca per titolo..."
+                        aria-label="Search"
+                        value={query}
+                        onChange={e => setQuery(e.target.value)} />
                 </form>
 
                 <button type="button" className="btn btn-outline-secondary">Ordina</button>
@@ -21,7 +26,7 @@ export default function HomePage() {
 
             <div className="row row-cols-1 row-cols-md-3 g-4 my-3">
                 {
-                    vinyls.map((v, index) => (
+                    filteredVinyls.map((v, index) => (
                         <div key={index} className="col">
                             <div className="card h-100">
                                 <Link to={`/vinyls/${v.id}`} className="card-body">
