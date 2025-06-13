@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router"
 
+const url = import.meta.env.VITE_API_URL;
+
 export default function VinylDetails() {
-    // richiesta show singolo vinile
     const { id } = useParams();
-    const url = "http://localhost:3001/vinyls";
+
+    // SHOW
     const [selectedVinyl, setSelectedVinyl] = useState({});
     useEffect(() => {
         fetch(`${url}/${id}`)

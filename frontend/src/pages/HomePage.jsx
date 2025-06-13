@@ -1,19 +1,8 @@
-import { useState, useEffect } from "react"
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
+import { useGlobalContext } from "../contexts/GlobalContext"
 
 export default function HomePage() {
-    // richiesta index vinili
-    const url = "http://localhost:3001/vinyls";
-    const [vinyls, setVinyls] = useState([]);
-    useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                setVinyls(data);
-                console.log(data);
-            })
-            .catch(err => console.error(err))
-    }, []);
+    const { vinyls } = useGlobalContext();
 
     return (
         <>
