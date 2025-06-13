@@ -19,16 +19,27 @@ const GlobalProvider = ({ children }) => {
             .catch(err => console.error(err))
     }, []);
 
+    // categories
+    const [selectedCategory, setSelectedCategory] = useState("");
+    const categories = [...new Set(vinyls.map(v => v.category))];
+
     // search bar
     const [query, setQuery] = useState("");
-    const filteredVinyls = vinyls.filter(v => v.title.toLowerCase().includes(query.trim().toLowerCase()));
+
+    const filteredVinyls = vinyls.filter(v => (
+        v.title.toLowerCase().includes(query.trim().toLowerCase()) &&
+        selectedCategory === "" || v.category === selectedCategory
+    ));
 
     // destructuring
     const value = {
         vinyls,
         filteredVinyls,
         query,
-        setQuery
+        setQuery,
+        categories,
+        selectedCategory,
+        setSelectedCategory
     };
 
     return (
