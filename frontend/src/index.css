@@ -7,14 +7,42 @@
 }
 
 :root {
-    --yellow: #faf2a0
+    --yellow: #faf2a0;
+    --white: whitesmoke;
+    --red: red;
 }
 
 a {
     text-decoration: none !important;
 }
 
+.shadow {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 /* navbar */
 nav {
     background-color: var(--yellow) !important;
+}
+
+/* wish list */
+.card {
+    position: relative;
+}
+
+i {
+    background-color: var(--white);
+    padding: 1rem;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+
+    position: absolute;
+    top: 7%;
+    right: 7%;
+}
+
+i:hover {
+    color: var(--red);
+    cursor: pointer;
+    transform: scale(1.1);
 }
