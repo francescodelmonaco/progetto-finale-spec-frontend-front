@@ -19,17 +19,36 @@ const GlobalProvider = ({ children }) => {
             .catch(err => console.error(err))
     }, []);
 
-    // categories
+    // categories filter
     const [selectedCategory, setSelectedCategory] = useState("");
     const categories = [...new Set(vinyls.map(v => v.category))];
 
     // search bar
     const [query, setQuery] = useState("");
 
-    const filteredVinyls = vinyls.filter(v => (
-        v.title.toLowerCase().includes(query.trim().toLowerCase()) &&
-        selectedCategory === "" || v.category === selectedCategory
-    ));
+    // title and categories order
+    const [sortBy, setSortBy] = useState("title");
+    const [order, setOrder] = useState("asc");
+
+    const sortVinyls = arr =>
+        [...arr].sort((a, b) =>
+            order === "asc"
+                ? a[sortBy].localeCompare(b[sortBy])
+                : b[sortBy].localeCompare(a[sortBy])
+        );
+
+    const handleSortChange = (value) => {
+        const [field, order] = value.split("-");
+        setSortBy(field);
+        setOrder(order);
+    };
+
+    const filteredVinyls = sortVinyls(
+        vinyls.filter(v =>
+            v.title.toLowerCase().includes(query.trim().toLowerCase()) &&
+            (selectedCategory === "" || v.category === selectedCategory)
+        )
+    );
 
     // destructuring
     const value = {
@@ -39,7 +58,10 @@ const GlobalProvider = ({ children }) => {
         setQuery,
         categories,
         selectedCategory,
-        setSelectedCategory
+        setSelectedCategory,
+        sortBy,
+        order,
+        handleSortChange
     };
 
     return (

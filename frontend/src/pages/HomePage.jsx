@@ -2,7 +2,16 @@ import { Link } from "react-router-dom"
 import { useGlobalContext } from "../contexts/GlobalContext"
 
 export default function HomePage() {
-    const { filteredVinyls, query, setQuery, categories, selectedCategory, setSelectedCategory } = useGlobalContext();
+    const { filteredVinyls,
+        query,
+        setQuery,
+        categories,
+        selectedCategory,
+        setSelectedCategory,
+        sortBy,
+        order,
+        handleSortChange
+    } = useGlobalContext();
 
     return (
         <>
@@ -32,7 +41,22 @@ export default function HomePage() {
                         onChange={e => setQuery(e.target.value)} />
                 </form>
 
-                <button type="button" className="btn btn-outline-secondary w-25">Ordina</button>
+                <select
+                    className="form-select w-25"
+                    value={`${sortBy}-${order}`}
+                    onChange={e => handleSortChange(e.target.value)}
+                >
+                    <option value="title-asc">Titolo A ⮕ Z</option>
+                    <option value="title-desc">Titolo Z ⮕ A</option>
+                    {
+                        selectedCategory === "" && (
+                            <>
+                                <option value="category-asc">Genere A ⮕ Z</option>
+                                <option value="category-desc">Genere Z ⮕ A</option>
+                            </>
+                        )
+                    }
+                </select>
             </div>
 
             <div className="row row-cols-1 row-cols-md-3 g-4 my-3">
