@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
+import { useGlobalContext } from "../contexts/GlobalContext"
 
-export default function VinylCard({ vinylId, cover, title, artist, genre }) {
+export default function VinylCard({ vinyl, vinylId, cover, title, artist, genre }) {
+    const { addToWishlist } = useGlobalContext();
+
     return (
         <div className="card h-100">
             <Link to={`/vinyls/${vinylId}`} className="card-body shadow">
@@ -16,7 +19,11 @@ export default function VinylCard({ vinylId, cover, title, artist, genre }) {
                 </div>
             </Link>
 
-            <i className="fa-solid fa-heart shadow"></i>
+            <button
+                className="border border-0"
+                onClick={() => addToWishlist(vinyl)}>
+                <i className="fa-solid fa-heart shadow"></i>
+            </button>
         </div>
     )
 }

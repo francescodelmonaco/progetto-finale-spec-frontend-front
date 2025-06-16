@@ -79,6 +79,7 @@ export default function HomePage() {
                     filteredVinyls.map((v, index) => (
                         <div key={index} className="col">
                             <VinylCard
+                                vinyl={v}
                                 vinylId={v.id}
                                 cover={v.cover}
                                 title={v.title}

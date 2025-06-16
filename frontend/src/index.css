@@ -30,7 +30,7 @@ nav {
     position: relative;
 }
 
-i {
+.fa-heart {
     background-color: var(--white);
     padding: 1rem;
     border: 1px solid var(--white);
@@ -41,7 +41,7 @@ i {
     right: 7%;
 }
 
-i:hover {
+.fa-heart:hover {
     color: var(--red);
     cursor: pointer;
     transform: scale(1.1);

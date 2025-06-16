@@ -50,6 +50,21 @@ const GlobalProvider = ({ children }) => {
         )
     );
 
+    // wishlist
+    const [wishlist, setWishlist] = useState([]);
+
+    const addToWishlist = (vinyl) => {
+        setWishlist(prev =>
+            prev.some(v => v.id === vinyl.id)
+                ? prev                // se già presente, non fare nulla
+                : [...prev, vinyl]    // altrimenti aggiungi
+        );
+
+        console.log(vinyl);
+    };
+
+    const deleteWishlist = () => setWishlist([]);
+
     // destructuring
     const value = {
         vinyls,
@@ -61,7 +76,10 @@ const GlobalProvider = ({ children }) => {
         setSelectedCategory,
         sortBy,
         order,
-        handleSortChange
+        handleSortChange,
+        wishlist,
+        addToWishlist,
+        deleteWishlist
     };
 
     return (
