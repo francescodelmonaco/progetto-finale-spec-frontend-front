@@ -65,6 +65,10 @@ const GlobalProvider = ({ children }) => {
 
     const deleteWishlist = () => setWishlist([]);
 
+    // comparator
+    const [firstSelectedId, setFirstSelectedId] = useState("");
+    const [secondSelectedId, setSecondSelectedId] = useState("");
+
     // destructuring
     const value = {
         vinyls,
@@ -79,7 +83,11 @@ const GlobalProvider = ({ children }) => {
         handleSortChange,
         wishlist,
         addToWishlist,
-        deleteWishlist
+        deleteWishlist,
+        firstSelectedId,
+        setFirstSelectedId,
+        secondSelectedId,
+        setSecondSelectedId
     };
 
     return (

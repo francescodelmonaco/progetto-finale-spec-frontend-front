@@ -35,10 +35,12 @@ export default function VinylDetails() {
                 <ul className="d-flex flex-column w-50">
                     <li><strong>Genere: </strong>{vinyl.category}</li>
                     <li><strong>Anno di pubblicazione: </strong>{vinyl.releaseYear}</li>
+                    <li><strong>Etichetta discografica: </strong>{vinyl.recordLabel.join(", ")}</li>
                     <li><strong>Formato: </strong>{vinyl.format}</li>
                     <li><strong>RPM: </strong>{vinyl.rpm}</li>
                     <li><strong>Colore vinile: </strong>{vinyl.vinylColor}</li>
                     <li><strong>Lingua: </strong>{vinyl.language}</li>
+
                     <li className="mt-3"><strong>Tracklist:</strong></li>
 
                     <div className="d-flex flex-column mt-1">

@@ -21,7 +21,8 @@ export default function VinylCard({ vinyl, vinylId, cover, title, artist, genre 
 
             <button
                 className="border border-0"
-                onClick={() => addToWishlist(vinyl)}>
+                onClick={() => addToWishlist(vinyl)}
+            >
                 <i className="fa-solid fa-heart shadow"></i>
             </button>
         </div>

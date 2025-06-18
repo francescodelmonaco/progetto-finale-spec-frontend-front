@@ -8,6 +8,7 @@
 
 :root {
     --yellow: #faf2a0;
+    --yellow-hover: rgba(225, 195, 142, 0.7);
     --white: whitesmoke;
     --red: red;
 }
@@ -20,12 +21,41 @@ a {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-/* navbar */
-nav {
-    background-color: var(--yellow) !important;
+.logo-shadow {
+    filter: drop-shadow(rgba(0, 0, 0, 0.24) 0px 3px 8px);
 }
 
-/* wish list */
+ul {
+    list-style-type: none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* scrollbar */
+/* chrome, safari, opera */
+body::-webkit-scrollbar {
+    display: none;
+
+    /* IE and Edge */
+    -ms-overflow-style: none;
+
+    /* Firefox */
+    scrollbar-width: none;
+}
+
+/* navbar */
+.navbar-nav {
+    background-color: var(--yellow) !important;
+    border: 1px solid var(--yellow);
+    padding: 0.2rem 0.5rem;
+}
+
+nav li:hover {
+    background-color: var(--yellow-hover);
+    border-radius: 2rem;
+}
+
+/* wishlist */
 .card {
     position: relative;
 }
@@ -45,4 +75,9 @@ nav {
     color: var(--red);
     cursor: pointer;
     transform: scale(1.1);
+}
+
+/* comparator */
+.list-cover {
+    height: 50%;
 }
