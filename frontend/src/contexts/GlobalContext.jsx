@@ -60,7 +60,13 @@ const GlobalProvider = ({ children }) => {
                 : [...prev, vinyl]    // altrimenti aggiungi
         );
 
-        console.log(vinyl);
+        console.log("Aggiungo alla wishlist:", vinyl);
+    };
+
+    const removeFromWishlist = (vinyl) => {
+        console.log("Rimuovo dalla wishlist:", vinyl);
+        if (!vinyl || !vinyl.id) return;
+        setWishlist(prev => prev.filter(v => v && v.id !== vinyl.id));
     };
 
     const deleteWishlist = () => setWishlist([]);
@@ -83,6 +89,7 @@ const GlobalProvider = ({ children }) => {
         handleSortChange,
         wishlist,
         addToWishlist,
+        removeFromWishlist,
         deleteWishlist,
         firstSelectedId,
         setFirstSelectedId,

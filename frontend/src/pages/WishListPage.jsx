@@ -45,11 +45,9 @@ export default function WishListPage() {
                     filteredWishlist.map((v, index) => (
                         <div key={index} className="col">
                             <VinylCard
-                                vinylId={v.id}
-                                cover={v.cover}
-                                title={v.title}
-                                artist={v.artist}
-                                genre={v.category}
+                                vinyl={v}
+                                showHeart={false}
+                                showDelete={true}
                             />
                         </div>
                     ))

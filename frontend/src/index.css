@@ -50,9 +50,18 @@ body::-webkit-scrollbar {
     padding: 0.2rem 0.5rem;
 }
 
+nav li {
+    transition: 0.3s;
+}
+
 nav li:hover {
     background-color: var(--yellow-hover);
     border-radius: 2rem;
+}
+
+.navbar-toggler {
+    background-color: var(--yellow) !important;
+    border: 1px solid var(--yellow) !important;
 }
 
 /* wishlist */
@@ -60,7 +69,11 @@ nav li:hover {
     position: relative;
 }
 
-.fa-heart {
+.heart-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background-color: var(--white);
     padding: 1rem;
     border: 1px solid var(--white);
@@ -69,12 +82,13 @@ nav li:hover {
     position: absolute;
     top: 7%;
     right: 7%;
+
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.fa-heart:hover {
-    color: var(--red);
-    cursor: pointer;
+.heart-btn:hover {
     transform: scale(1.1);
+    color: var(--red);
 }
 
 /* comparator */
