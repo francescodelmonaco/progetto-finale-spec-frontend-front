@@ -12,7 +12,7 @@ export default function WishListPage() {
 
     return (
         <>
-            <h1 className="text-center p-3">Wish List</h1>
+            <h1 className="text-center p-3">Preferiti</h1>
 
             <div className="d-flex justify-content-between align-items-center gap-3">
                 <div className="w-75 d-flex flex-column justify-content-between gap-1">

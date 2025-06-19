@@ -24,7 +24,7 @@ export default function NavBar() {
                         </li>
 
                         <li className="nav-item px-3">
-                            <NavLink className="nav-link" aria-current="page" to={"/wishlist"}>Wish List</NavLink>
+                            <NavLink className="nav-link" aria-current="page" to={"/wishlist"}>Preferiti</NavLink>
                         </li>
                     </ul>
                 </div>
