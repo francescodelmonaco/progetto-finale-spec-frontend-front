@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react"
+import { createContext, useContext, useState, useEffect, useMemo, useCallback } from "react"
 
 const url = import.meta.env.VITE_API_URL;
 
@@ -43,11 +43,14 @@ const GlobalProvider = ({ children }) => {
         setOrder(order);
     };
 
-    const filteredVinyls = sortVinyls(
-        vinyls.filter(v =>
-            v.title.toLowerCase().includes(query.trim().toLowerCase()) &&
-            (selectedCategory === "" || v.category === selectedCategory)
-        )
+    const filteredVinyls = useMemo(() =>
+        sortVinyls(
+            vinyls.filter(v =>
+                v.title.toLowerCase().includes(query.trim().toLowerCase()) &&
+                (selectedCategory === "" || v.category === selectedCategory)
+            )
+        ),
+        [vinyls, query, selectedCategory, sortBy, order]
     );
 
     // wishlist
@@ -60,21 +63,19 @@ const GlobalProvider = ({ children }) => {
         localStorage.setItem("wishlist", JSON.stringify(wishlist));
     }, [wishlist]);
 
-    const addToWishlist = (vinyl) => {
+    const addToWishlist = useCallback((vinyl) => {
         setWishlist(prev =>
-            prev.some(v => v.id === vinyl.id)
-                ? prev                // se già presente, non fare nulla
-                : [...prev, vinyl]    // altrimenti aggiungi
+            prev.some(v => v.id === vinyl.id) ? prev : [...prev, vinyl]
         );
 
         console.log("Aggiungo alla wishlist:", vinyl);
-    };
+    }, [setWishlist]);
 
-    const removeFromWishlist = (vinyl) => {
+    const removeFromWishlist = useCallback((vinyl) => {
+        setWishlist(prev => prev.filter(v => v.id !== vinyl.id));
+
         console.log("Rimuovo dalla wishlist:", vinyl);
-        if (!vinyl || !vinyl.id) return;
-        setWishlist(prev => prev.filter(v => v && v.id !== vinyl.id));
-    };
+    }, [setWishlist]);
 
     const deleteWishlist = () => setWishlist([]);
 
