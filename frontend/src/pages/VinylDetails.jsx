@@ -27,12 +27,12 @@ export default function VinylDetails() {
             <h1 className="text-center pt-3">{vinyl.title}</h1>
             <h3 className="text-center pb-3">{vinyl.artist}</h3>
 
-            <div className="d-flex justify-content-between gap-5">
-                <figure className="w-50">
+            <div className="d-flex justify-content-between gap-3 flex-column flex-lg-row">
+                <figure className="w-100">
                     <img className="w-100 rounded shadow" src={vinyl.cover} alt={vinyl.title} />
                 </figure>
 
-                <ul className="d-flex flex-column w-50">
+                <ul className="d-flex flex-column w-100">
                     <li><strong>Genere: </strong>{vinyl.category}</li>
                     <li><strong>Anno di pubblicazione: </strong>{vinyl.releaseYear}</li>
                     <li><strong>Etichetta discografica: </strong>{vinyl.recordLabel.join(", ")}</li>
@@ -43,7 +43,7 @@ export default function VinylDetails() {
 
                     <li className="mt-3"><strong>Tracklist:</strong></li>
 
-                    <div className="d-flex flex-column mt-1">
+                    <div className="d-flex flex-column mt-1 mb-3">
                         {
                             vinyl.tracks.map((t, i) => <span key={i}>{i + 1} | {t}</span>)
                         }

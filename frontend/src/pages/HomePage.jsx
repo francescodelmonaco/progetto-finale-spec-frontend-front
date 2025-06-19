@@ -20,12 +20,12 @@ export default function HomePage() {
         <>
             <h1 className="text-center p-3">Catalogo vinili</h1>
 
-            <div className="d-flex justify-content-between align-items-center gap-5">
-                <div className="w-25 d-flex flex-column justify-content-between gap-1">
+            <div className="d-flex justify-content-between align-items-center gap-3 flex-column flex-lg-row">
+                <div className="w-100 d-flex flex-column justify-content-between gap-1">
                     <label><strong>Filtra per genere</strong></label>
 
                     <select
-                        className="form-select"
+                        className="form-select rounded-pill"
                         value={selectedCategory}
                         onChange={e => setSelectedCategory(e.target.value)}
                     >
@@ -38,25 +38,25 @@ export default function HomePage() {
                     </select>
                 </div>
 
-                <div className="w-50 d-flex flex-column justify-content-between gap-1">
+                <div className="w-100 d-flex flex-column justify-content-between gap-1">
                     <label><strong>Ricerca per titolo</strong></label>
 
                     <form role="search">
                         <input
-                            className="form-control me-2"
+                            className="form-control me-2 rounded-pill"
                             type="search"
-                            placeholder="..."
+                            placeholder="Titolo vinile"
                             aria-label="Search"
                             value={query}
                             onChange={e => setQuery(e.target.value)} />
                     </form>
                 </div>
 
-                <div className="w-25 d-flex flex-column justify-content-between gap-1">
+                <div className="w-100 d-flex flex-column justify-content-between gap-1">
                     <label><strong>Ordina</strong></label>
 
                     <select
-                        className="form-select"
+                        className="form-select rounded-pill"
                         value={`${sortBy}-${order}`}
                         onChange={e => handleSortChange(e.target.value)}
                     >

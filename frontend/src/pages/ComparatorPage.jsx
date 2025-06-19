@@ -16,7 +16,8 @@ export default function ComparatorPage() {
     return (
         <>
             <h1 className="text-center p-3">Confronta i tuoi vinili</h1>
-            <div className="d-flex justify-content-between gap-3">
+
+            <div className="d-flex flex-column flex-lg-row justify-content-between gap-3">
                 <VinylDatasList
                     label={"Vinile 1"}
                     selectValue={firstSelectedId}

@@ -11,6 +11,7 @@
     --yellow-hover: rgba(225, 195, 142, 0.7);
     --white: whitesmoke;
     --red: red;
+    --grey: #71737f;
 }
 
 a {
@@ -21,9 +22,9 @@ a {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.logo-shadow {
+/* .logo-shadow {
     filter: drop-shadow(rgba(0, 0, 0, 0.24) 0px 3px 8px);
-}
+} */
 
 ul {
     list-style-type: none;
@@ -62,6 +63,15 @@ nav li:hover {
 .navbar-toggler {
     background-color: var(--yellow) !important;
     border: 1px solid var(--yellow) !important;
+}
+
+.logo-nav {
+    background-color: var(--yellow);
+
+}
+
+.logo-title {
+    color: var(--grey);
 }
 
 /* wishlist */

@@ -11,11 +11,11 @@ export default function VinylDatasList({
     const { vinyls } = useGlobalContext();
 
     return (
-        <div className="w-50">
+        <div className="w-100">
             <label className="py-1"><strong>{label}</strong></label>
 
             <select
-                className="w-100 form-select"
+                className="w-100 form-select rounded-pill"
                 value={selectValue}
                 onChange={selectChangeValue}
             >
@@ -29,15 +29,15 @@ export default function VinylDatasList({
 
             {vinylToCompare && (
                 <>
-                    <figure className="list-cover my-2 card-img">
+                    <figure className="list-cover my-3 card-img">
                         <img
                             src={vinylToCompare.cover}
-                            className="rounded h-100 w-100"
+                            className="rounded h-100 w-100 shadow"
                             alt={vinylToCompare.title}
                         ></img>
                     </figure>
 
-                    <ul className="my-2 list-group list-group-flush">
+                    <ul className="my-3 list-group list-group-flush">
                         <li className="list-group-item"><strong>Titolo:</strong> {vinylToCompare.title}</li>
                         <li className="list-group-item"><strong>Artista:</strong> {vinylToCompare.artist}</li>
                         <li className="list-group-item"><strong>Genere: </strong>{vinylToCompare.category}</li>

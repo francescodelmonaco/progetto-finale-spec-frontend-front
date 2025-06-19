@@ -14,15 +14,15 @@ export default function WishListPage() {
         <>
             <h1 className="text-center p-3">Wish List</h1>
 
-            <div className="d-flex justify-content-between align-items-center gap-5">
+            <div className="d-flex justify-content-between align-items-center gap-3">
                 <div className="w-75 d-flex flex-column justify-content-between gap-1">
                     <label><strong>Ricerca per titolo</strong></label>
 
                     <form role="search">
                         <input
-                            className="form-control me-2"
+                            className="form-control me-2 rounded-pill"
                             type="search"
-                            placeholder="..."
+                            placeholder="Titolo vinile"
                             aria-label="Search"
                             value={query}
                             onChange={e => setQuery(e.target.value)} />
@@ -30,9 +30,9 @@ export default function WishListPage() {
                 </div>
 
                 <div className="w-25 d-flex flex-column justify-content-between gap-1">
-                    <label><strong>Svuota la wishlist</strong></label>
+                    <label><strong>Svuota</strong></label>
                     <button
-                        className="btn btn-outline-danger"
+                        className="btn btn-outline-danger rounded-pill"
                         onClick={deleteWishlist}
                     >
                         <i className="fa-solid fa-trash"></i>
